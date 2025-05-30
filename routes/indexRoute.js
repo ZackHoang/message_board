@@ -26,5 +26,7 @@ indexRouter.post("/new", (req, res) => {
 
 // indexRouter.get("/", (req, res) => {})
 
-module.exports = messages
-module.exports = indexRouter
+module.exports = {
+  messages: messages, 
+  indexRouter: indexRouter
+}

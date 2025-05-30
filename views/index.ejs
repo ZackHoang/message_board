@@ -8,11 +8,13 @@
 <body>
     <h1>Message Board</h1>
     <% for (let i = 0; i < messages.length; i++) { %> 
-        <div>
+        <div id=<%= i %>>
             <h2><%= messages[i].user %></h2>
             <h3><%= messages[i].added %></h3>
             <p><%= messages[i].text %></p>
+            <a href="/message/<%= messages[i].user %>">View full message</a>
         </div>
     <%} %>
+    <a href="/new">Send A Message</a>
 </body>
 </html>
