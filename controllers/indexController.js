@@ -6,10 +6,11 @@ exports.displayMessages = (req, res) => {
 }
 
 exports.addNewMessage = (req, res) => {
-    messages.push({
-        text: req.body.text, 
-        user: req.body.user, 
-        added: new Date()
-    }); 
-    res.redirect("/");
+  messages.push({
+      text: req.body.text, 
+      user: req.body.user, 
+      added: new Date(), 
+      ID: crypto.randomUUID()
+  }); 
+  res.redirect("/");
 }

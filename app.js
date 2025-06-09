@@ -6,16 +6,14 @@ const messageRoute = require("./routes/messageRoute.js");
 
 const app = express(); 
 
+app.set("views", path.join(__dirname, "views")); 
+app.set("view engine", "ejs"); 
+
 app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter); 
 app.use("/new", newRoute); 
-app.use("/:user", (req, res, next) => {
-    req.user = req.params.user;
-    next();  
-}, messageRoute); 
+app.use("/message", messageRoute); 
 
-app.set("views", path.join(__dirname, "views")); 
-app.set("view engine", "ejs"); 
 
 app.listen(3000, () => {
     console.log("App listening at port 3000"); 

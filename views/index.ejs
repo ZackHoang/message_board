@@ -12,7 +12,7 @@
             <h2><%= messages[i].user %></h2>
             <h3><%= messages[i].added %></h3>
             <p><%= messages[i].text %></p>
-            <a href="/<%= messages[i].user %>">View full message</a>
+            <a href="/message/<%= messages[i].ID %>">View full message</a>
         </div>
     <%} %>
     <a href="/new">Send A Message</a>

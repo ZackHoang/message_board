@@ -3,6 +3,6 @@ const express = require("express");
 const messageController = require("../controllers/messageController"); 
 const messageRoute = express.Router(); 
 
-messageRoute.get("/", messageController.displayMessage)
+messageRoute.get("/:ID", messageController.displayMessage)
 
 module.exports = messageRoute; 

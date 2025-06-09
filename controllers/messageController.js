@@ -1,7 +1,9 @@
 const messages = require("../models/messages")
 
 exports.displayMessage = (req, res) => {
-    const user = req.user; 
-    const message = messages.find((message) => message.user === user)
+    const id = req.params.ID; 
+    console.log("id is: ", id); 
+    const message = messages.find((message) => message.ID === id); 
+    console.log(message); 
     res.render("message", {message: message})
 }
